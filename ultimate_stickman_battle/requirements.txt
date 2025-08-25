@@ -1,0 +1,3 @@
+panda3d==1.10.13
+direct-python==0.1.0
+numpy==1.24.3

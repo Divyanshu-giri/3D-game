@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dominion Realms</title>
+    <script src="https://cdn.jsdelivr.net/gh/pygbag/pygbag@latest/pygbag.js"></script>
+</head>
+<body>
+    <h1>Welcome to Dominion Realms</h1>
+    <script>
+        // Initialize Pygbag
+        const app = new Pygbag.App({
+            main: "dominion_realms.main", // Entry point of your game
+            assets: "assets", // Path to your assets folder
+            width: 1024,
+            height: 768,
+            fullscreen: false,
+            debug: true
+        });
+        app.run();
+    </script>
+</body>
+</html>
