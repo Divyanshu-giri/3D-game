@@ -15,7 +15,7 @@ def build_web_version():
     # Check if pygbag is installed
     try:
         import pygbag
-        print("✓ Pygbag is installed")
+        print("Pygbag is installed")
     except ImportError:
         print("✗ Pygbag not installed. Installing...")
         subprocess.run([sys.executable, "-m", "pip", "install", "pygbag"])
@@ -44,7 +44,7 @@ def build_web_version():
     for file in files_to_copy:
         if Path(file).exists():
             shutil.copy2(file, build_dir / file)
-            print(f"✓ Copied {file}")
+            print(f"Copied {file}")
         else:
             print(f"✗ Missing {file}")
     
@@ -56,7 +56,7 @@ def build_web_version():
             if dest_dir.exists():
                 shutil.rmtree(dest_dir)
             shutil.copytree(src_dir, dest_dir)
-            print(f"✓ Copied {directory}/")
+            print(f"Copied {directory}/")
         else:
             print(f"✗ Missing {directory}/")
     
@@ -94,7 +94,7 @@ debug = true
         ], capture_output=True, text=True)
         
         if result.returncode == 0:
-            print("✓ Web build successful!")
+            print("Web build successful!")
             print("Files are in build/web/")
             
             # Create a simple server for testing
@@ -139,7 +139,7 @@ if __name__ == "__main__":
     with open(build_dir / "test_server.py", "w") as f:
         f.write(server_script)
     
-    print("✓ Created test server script: test_server.py")
+    print("Created test server script: test_server.py")
     print("Run 'python test_server.py' to test the web version locally")
 
 def create_apk_build_script():
@@ -161,7 +161,7 @@ print("3. Additional Android dependencies")
     with open("build_apk.py", "w") as f:
         f.write(apk_script)
     
-    print("✓ Created APK build script placeholder: build_apk.py")
+    print("Created APK build script placeholder: build_apk.py")
 
 if __name__ == "__main__":
     build_web_version()
